@@ -1,0 +1,60 @@
+.des{
+  text-align: center;
+  margin-left: 84px;
+  margin-right: 100px;
+  font-style: oblique;
+}
+.hed{
+    text-align: center;
+}
+.card-group{
+  width: 85vw;
+  margin-left: 198px;
+}
+.card-group img{
+  width: 300px;
+  margin-left: 6px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+.card-group a{
+  text-decoration: none;
+  color: black;
+}
+.col2{
+  margin-top: 220px;
+}
+.col1{
+  margin-top: 40px;
+}
+.cd{
+  height: 58vh;
+  width: 22vw;
+  margin-top: 130px;
+}
+.cd img{
+  width: 360px;
+}
+.conta{
+  height: 91vh
+}
+.card-group .cad{
+  width: 340px;
+}
+.sng{
+  margin-left: 720px;
+}
+.ann{
+  margin-right: 550px;
+}
+.sing{
+  margin-left: 700px;
+}
+.lgn{
+  width: 380px;
+  margin-left: 450px;
+}
+.sr{
+  background-color: white;
+  color: white;
+}
