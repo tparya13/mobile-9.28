@@ -13,9 +13,9 @@
  <h5 class="des mt-4 mb-5">A mobile phone (or cellphone[a]) is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area, as opposed to a fixed-location phone (landline phone). The radio frequency link establishes a connection to the switching systems of a mobile phone operator, which provides access to the public switched telephone network.</h5></div>
  {% endif %}
 
-<div class="container-fluid">
+<div class="container-fluid d-flex justify-content-center">
     <div class="card-group mb-3">
-      {% for i in data %}
+      {% for i in products %}
         {% if i.available %}
         <a href="{% url 'shop:details' i.id %}">
         <div class="cad border p-3 mb-5 bg-body rounded mb-4 me-4">
@@ -31,9 +31,9 @@
         {% endfor %}
       </div>
 </div>
-<!-- paginator  -->
+
 <div class="paginator mx-auto">
-  {% if products.paginator.num_Page > 1 %}<hr>
+  {% if products.paginator.num_pages > 1 %}<hr>
     <div class="text-center">
       {% for pg in products.paginator.page_range %}
       <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}active {% endif %}">{{pg}}</a>
