@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for cartitem in cart %}
+<h1 class="text-danger pt-5">{{cartitem.product}}.{{cartitem.quantity}}</h1>
+{% endfor %}
+{% endblock %}
