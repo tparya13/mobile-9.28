@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'TodoApp',
     'userarauth',
     'searchapp',
+    'cart',
 ]
 
 MIDDLEWARE = [
