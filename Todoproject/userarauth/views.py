@@ -29,6 +29,8 @@ def registerUser(req):
             messages.info(req,"password not matched")
             return redirect('auth:register')
     return render(req, 'registeruser.html')
+
+
 def loginUser(req):
     if req.method=='POST':
         username=req.POST.get("username","")
@@ -37,11 +39,15 @@ def loginUser(req):
         print(user)
         if user is not None:
           auth.login(req,user)
+          req.session['user']=str(user)
           return redirect('shop:home')
         else:
             messages.info(req, "invalidcredentials")
             return redirect('auth:login')
     return render(req, 'loginuser.html')
+
+
 def logoutUser(req):
     auth.logout(req)
+    req.session.pop('user',None)
     return redirect('shop:home')

@@ -1,7 +1,36 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% for cartitem in cart %}
-<h1 class="text-danger pt-5">{{cartitem.product}}.{{cartitem.quantity}}</h1>
-{% endfor %}
+
+<h1 class="yr mt-3 mb-5">PURCHASE CHART</h1>
+<table class="tbl table w-75">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Product<th>
+            <th scope="col">Quantity<th>
+            <th scope="col">Price<th>
+            <th scope="col">Cancel<th>
+            <th scope="col">Buy now<th>
+        </tr>
+    </thead>     
+
+           
+    <tbody>
+        <tr>
+        {% for cartitem in cart %}
+            <th scope="row">{{cartitem.product}}</th>
+            <td>{{cartitem.quantity}}<td>
+            <td>{{cartitem.product.price}}<td>
+            <td><a href="" class="btn btn-danger">Cancel</a></td> 
+            <td><button class="btn btn-success">Buy Now</button></td>       
+
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+
+
+
 {% endblock %}
