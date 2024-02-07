@@ -2,35 +2,64 @@
 {% load static %}
 {% block content %}
 
-<h1 class="yr mt-3 mb-5">PURCHASE CHART</h1>
-<table class="tbl table w-75">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">Product<th>
-            <th scope="col">Quantity<th>
-            <th scope="col">Price<th>
-            <th scope="col">Cancel<th>
-            <th scope="col">Buy now<th>
-        </tr>
-    </thead>     
-
-           
-    <tbody>
-        <tr>
-        {% for cartitem in cart %}
-            <th scope="row">{{cartitem.product}}</th>
-            <td>{{cartitem.quantity}}<td>
-            <td>{{cartitem.product.price}}<td>
-            <td><a href="" class="btn btn-danger">Cancel</a></td> 
-            <td><button class="btn btn-success">Buy Now</button></td>       
-
-        </tr>
-        {% endfor %}
-        
-    </tbody>
-</table>
 
 
+<div class="row">
+    <div class="col-lg-11">
+        <h1 class="yr mt-3 mb-5">YOUR  PURCHASE  CART</h1>
+        <table class="tbl table w-75">
+            <thead class="thead-light">
+                <tr class="trr bg-secxondary">
+                    <th scope="col" style="width: 350px;">
+                        <h3>Product</h3>
+                    </th>
+                    <th scope="col">
+                        <h3>Quantity</h3>
+                    </th>
+                    <th scope="col">
+                        <h3>Price</h3>
+                    </th>
+                    <th scope="col">
+                        <h3>Cancel</h3>
+                    </th>
+                    <th scope="col">
+                        <h3>Buy now</h3>
+                    </th>
+                </tr>
+            </thead>
 
 
-{% endblock %}
+            <tbody>
+                <tr>
+                    {% for cartitem in cart %}
+                    <th scope="row">
+                        <img class="crtimg me-3 shadow" style="width: 85px;" src="{{cartitem.product.image.url}}"alt="">{{cartitem.product}}
+                    </th>
+                    <td>
+                        <h4 class="mt-4 ms-4">{{cartitem.quantity}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="mt-4">{{cartitem.product.price}}</h4>
+                    </td>
+                    <td><a href="" class="btn btn-danger">Cancel</a></td>
+                    <td><button class="btn btn-success">Buy Now</button></td>
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+    <a href="{% url 'shop:home' %}" class="purch btn btn-primary pt-2 pb-2 ps-2 pe-2">
+        <h4>continue purchase</h4>
+    </a>
+
+
+
+
+    {% endblock %}
