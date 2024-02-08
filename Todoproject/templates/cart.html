@@ -35,6 +35,23 @@
                     <th scope="row">
                         <img class="crtimg me-3 shadow" style="width: 85px;" src="{{cartitem.product.image.url}}"alt="">{{cartitem.product}}
                     </th>
+                    <td>{{cartitem.product}}</td>
+                    <td>${{cartitem.product.price}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'cart:removecart' cartitem.product.id %}">-</a>
+                        <span>{{cartitem.quantity}}</span>
+                        <a class="btn btn-primary" href="{% url 'cart:addcart' cartitem.product.id %}">+</a>
+                    </td>
+                    <td>${{cartitem.product.price}}</td>
+                    <td>
+                        <a class="btn btn-danger" href="{% url 'cart:fullremove' cartitem.product.id %}">Remove</a>
+                    </td>
+
+                        
+                        
+
+<!-- 
+
                     <td>
                         <h4 class="mt-4 ms-4">{{cartitem.quantity}}</h4>
                     </td>
@@ -42,7 +59,7 @@
                         <h4 class="mt-4">{{cartitem.product.price}}</h4>
                     </td>
                     <td><a href="" class="btn btn-danger">Cancel</a></td>
-                    <td><button class="btn btn-success">Buy Now</button></td>
+                    <td><button class="btn btn-success">Buy Now</button></td> -->
 
                 </tr>
                 {% endfor %}

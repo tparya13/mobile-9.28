@@ -21,4 +21,21 @@ def addcart(req,id):
 def displaycart(req):
     user=req.session['user']
     cart=Cart.objects.all().filter(user=user) 
-    return render(req,'cart.html',{'cart':cart})      
+    return render(req,'cart.html',{'cart':cart})     
+
+
+def removecart(req,id):
+    user=req.session['user']
+    product=Product.objects.get(id=id)
+    cart=Cart.objects.get(product=product,user=user)
+    if cart.quantity>1:
+        cart.quantity-=1
+        cart.save()
+    return redirect('cart:displaycart')
+
+def fullremove(req,id):
+    user=req.session['user']
+    product=Product.objects.get(id=id)
+    cart=Cart.objects.get(product=product,user=user)
+    cart.delete()
+    return redirect('cart:displaycart')     
