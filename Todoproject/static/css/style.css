@@ -8,11 +8,11 @@
     text-align: center;
 }
 .card-group{
-  width: 85vw;
-  margin-left: 198px;
+  width: 97vw;
+  margin-left: 40px;
 }
 .card-group img{
-  width: 300px;
+  width: 200px;
   margin-left: 6px;
   margin-right: 20px;
   margin-top: 5px;
@@ -23,9 +23,15 @@
 }
 .col2{
   margin-top: 220px;
+
+}
+.coo{
+  color: green;
+
 }
 .col1{
   margin-top: 40px;
+
 }
 .cd{
   height: 58vh;
@@ -66,4 +72,10 @@
 }
 .purch{
   margin-left: 800px;
+  margin-bottom: 200px;
+}
+.cdd
+{
+  margin-left: 800px;
+
 }

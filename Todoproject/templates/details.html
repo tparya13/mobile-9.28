@@ -13,14 +13,17 @@
                 
                 </div>
             </div>
-                <div class="col2 col-5 ms-2">
+                <div class="col2 col-5 ms-4">
                     <h2>{{data.name}}</h2>
-                    <h3>${{data.price}}</h3>
+                    <h5>{{data.desc}}</h5>
+                    <div class="coo">
+                    <h3>${{data.price}}</h3></div>
                     <h5 class="ct mt-3">category: {{data.category}}</h5>    
-
+                    <h5>created date:{{data.created}}</h5> 
+                    <h5 class="up mb-4">updated date: {{data.updated}}</h5>   
 
                     {% if data.stock >= 1 %}
-                    <a href="{% url 'cart:addcart' data.id %}" type="button" class="btn btn-warning me-3 p-3">Add to cart</a>
+                    <a href="{% url 'cart:addcart' data.id %}" type="button" class="btn btn-warning me-3 p-2">Add to cart</a>
                     <button class="btn btn-danger">Buy Now</button>
                     {% else %}
                     <span><h3 class="out" style="color: green;">out of stock</h3></span>
