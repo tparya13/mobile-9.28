@@ -77,8 +77,10 @@
     </a>
 
 
-    <a href class=" btn btn-warning mb-4">
+    <!-- {% comment %} <a href class=" btn btn-warning mb-4">
         <h3>placeholder</h3>
-    </a>
+    </a> {% endcomment %} -->
+
+    <a href="{% url 'cart:placeorder' %}" class="plas btn btn-warning pt-2 mb-4"><h4>Place order</h4></a>
 
     {% endblock %}
