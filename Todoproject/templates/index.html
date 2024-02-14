@@ -18,11 +18,11 @@
       {% for i in products %}
         {% if i.available %}
         <a href="{% url 'shop:details' i.id %}">
-        <div class="cad border p-5 mb-5 bg-body rounded mb-4 me-2 shadow">
+        <div class="cad border p-5 mb-5 bg-body rounded mb-4 me-2 shadow" >
           <img src="{{i.image.url}}" height="250px" class="card-img-top rounded-4 " alt="...">
-          <div class="card-body">
+          <div class="card-body" style="padding-left: 60px;">
             <h5 class="card-title">{{i.name}}</h5>
-            <h5 class="card-text">${{i.price}}</h5>
+            <h5 class="card-text" >${{i.price}}</h5>
             <h6 class="card-text">{{i.category}}</h6>
           </div>
         </div>

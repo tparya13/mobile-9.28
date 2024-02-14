@@ -9,13 +9,15 @@
 }
 .card-group{
   width: 97vw;
-  margin-left: 40px;
+  margin-left: 86px;
+  
 }
 .card-group img{
-  width: 200px;
-  margin-left: 6px;
+  width: 260px;
+  margin-left: 20px;
   margin-right: 20px;
   margin-top: 5px;
+  padding-right: 60px;
 }
 .card-group a{
   text-decoration: none;
@@ -79,3 +81,8 @@
   margin-left: 800px;
 
 }
+
+
+
+
+

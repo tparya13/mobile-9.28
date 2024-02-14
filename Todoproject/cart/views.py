@@ -21,7 +21,8 @@ def addcart(req,id):
 def displaycart(req):
     user=req.session['user']
     cart=Cart.objects.all().filter(user=user) 
-    return render(req,'cart.html',{'cart':cart})     
+    total=sum(cart.product.price * cart.quantity for cart in cart) - 1020
+    return render(req,'cart.html',{'cart':cart,'total':total})
 
 
 def removecart(req,id):
@@ -43,7 +44,10 @@ def fullremove(req,id):
 def placeorder(req):
     user=req.session['user']
     cart=Cart.objects.filter(user=user)
-    for carts in cart:
-        carts.delete()
-    return redirect('cart:displaycart')
+    for cart in cart:
+        prod=Product.objects.get(id=cart.product.id)
+        prod.stock-=cart.quantity
+        prod.save()
+        cart.delete()
+    return redirect('shop:home')
      
